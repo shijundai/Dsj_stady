@@ -15,9 +15,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
 import java.nio.charset.Charset;
-import java.util.concurrent.TimeUnit;
 
 /**
  *@ClassName TestNettyClient

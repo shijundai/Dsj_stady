@@ -1,4 +1,4 @@
-package com.strategy;/**
+package com.design.pattern.strategy;/**
  * @author Administrator
  * @Title: Controller
  * @Description:
