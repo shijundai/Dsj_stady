@@ -9,8 +9,6 @@ import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  *@ClassName TestUnSafe
