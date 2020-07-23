@@ -22,6 +22,7 @@ public class TestReentrantLock {
     private static Condition c2 = lock.newCondition();
     private static Condition c3 = lock.newCondition();
 
+
     public static void main(String []args) throws InterruptedException {
         new Thread(()->{
             Object obj = new Object();

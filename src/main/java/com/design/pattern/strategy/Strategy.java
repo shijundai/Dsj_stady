@@ -13,5 +13,5 @@ package com.design.pattern.strategy;/**
  *@Version 1.0
  **/
 public interface Strategy {
-    public int a();
+    int operator(int num1,int num2);
 }
