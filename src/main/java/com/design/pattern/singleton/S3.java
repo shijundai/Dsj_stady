@@ -6,6 +6,7 @@ package com.design.pattern.singleton;/**
  */
 
 /**
+ * 单例模式写法4 枚举方式
  *@ClassName S3
  *@Description TODO
  *@Author Administrator
