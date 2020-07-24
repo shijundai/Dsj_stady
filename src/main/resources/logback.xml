@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!--<define name="localIP" class="com.cnbot.common.IPLogDefiner"/>-->
+    <!--<contextListener class="com.cnbot.common.LoggerStartupListener"/>-->
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoding>UTF-8</encoding>
+        <encoder>
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss}] [%-5level] [%thread]
+                [%logger:%line] --%msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--<appender name="interfaceLogFile"-->
+              <!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<encoding>UTF-8</encoding>-->
+        <!--<File>${log.path}/elk/interface-${localIP}.log</File>-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--<level>INFO</level>-->
+        <!--</filter>-->
+        <!--<encoder-->
+                <!--class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
+            <!--<providers>-->
+                <!--<pattern>-->
+                    <!--<pattern>-->
+                        <!--{-->
+                        <!--"tags": ["httpApi"],-->
+                        <!--"project": "cnbots",-->
+                        <!--"timestamp": "%date{\"yyyy-MM-dd'T'HH:mm:ss,SSSZ\"}",-->
+                        <!--"log_level": "%level",-->
+                        <!--"thread": "%thread",-->
+                        <!--"class_name": "%class",-->
+                        <!--"line_number": "",-->
+                        <!--"message": "%message",-->
+                        <!--"stack_trace": "%exception{5}",-->
+                        <!--"req_id": "%X{reqId}",-->
+                        <!--"elapsed_time": "#asLong{%X{elapsedTime}}"-->
+                        <!--}-->
+                    <!--</pattern>-->
+                <!--</pattern>-->
+            <!--</providers>-->
+        <!--</encoder>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<FileNamePattern>${log.path}/bak/interface-${localIP}.%d{yyyy-MM-dd}.log-->
+            <!--</FileNamePattern>-->
+            <!--<maxHistory>15</maxHistory>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+    <!--<appender name="appLogFile"-->
+              <!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--&lt;!&ndash;See also http://logback.qos.ch/manual/appenders.html#RollingFileAppender &ndash;&gt;-->
+        <!--<encoding>UTF-8</encoding>-->
+        <!--<File>${log.path}/elk/app-${localIP}.log</File>-->
+        <!--<encoder-->
+                <!--class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
+            <!--<providers>-->
+                <!--<pattern>-->
+                    <!--<pattern>-->
+                        <!--{-->
+                        <!--"tags": [],-->
+                        <!--"project": "cnbots",-->
+                        <!--"timestamp": "%date{\"yyyy-MM-dd'T'HH:mm:ss,SSSZ\"}",-->
+                        <!--"log_level": "%level",-->
+                        <!--"thread": "%thread",-->
+                        <!--"class_name": "%class",-->
+                        <!--"line_number": "#asLong{%line}",-->
+                        <!--"message": "%message",-->
+                        <!--"stack_trace": "%exception{5}",-->
+                        <!--"req_id": "%X{reqId}",-->
+                        <!--"elapsed_time": "#asLong{%X{elapsedTime}}"-->
+                        <!--}-->
+                    <!--</pattern>-->
+                <!--</pattern>-->
+            <!--</providers>-->
+        <!--</encoder>-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+            <!--<level>INFO</level>-->
+        <!--</filter>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<FileNamePattern>${log.path}/bak/app-${localIP}.%d{yyyy-MM-dd}.log-->
+            <!--</FileNamePattern>-->
+            <!--<maxHistory>15</maxHistory>-->
+        <!--</rollingPolicy>-->
+    <!--</appender>-->
+
+
+    <logger name="com.logtest" level="INFO"
+            additivity="false">
+        <!--<appender-ref ref="appLogFile" />-->
+        <appender-ref ref="stdout" />
+    </logger>
+
+    <!--<logger name="com.cnbot.kindergarten.restful.controller" level="INFO"-->
+            <!--additivity="false">-->
+        <!--<appender-ref ref="interfaceLogFile" />-->
+        <!--<appender-ref ref="appLogFile"/>-->
+        <!--<appender-ref ref="stdout" />-->
+    <!--</logger>-->
+
+
+    <root level="INFO">
+        <appender-ref ref="stdout" />
+        <!--<appender-ref ref="appLogFile"/>-->
+    </root>
+</configuration>
