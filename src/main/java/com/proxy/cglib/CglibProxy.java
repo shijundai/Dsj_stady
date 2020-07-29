@@ -5,6 +5,7 @@ package com.proxy.cglib;/**
  * @date 2020/7/29
  */
 
+import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.*;
 
 import java.lang.reflect.Method;
@@ -23,9 +24,9 @@ public class CglibProxy {
      */
     public static void main(String []args) {
 
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\gclibclass");
         TestBean testBean = getProxyBean(TestBean.class, new MyLogMethodInterceptor());
         testBean.test();
-
 
     }
 
