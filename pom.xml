@@ -74,6 +74,14 @@
             <version>1.1.7</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.14</version>
+        </dependency>
+
+
         <!-- 将log4j的日志转换为slf4j 需要排除log4j group; 即替换实现 -->
         <!--<dependency>-->
             <!--<groupId>org.slf4j</groupId>-->
